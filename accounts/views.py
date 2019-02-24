@@ -10,7 +10,7 @@ def register(request):
       # Get form values
       first_name = request.POST['first_name']
       last_name = request.POST['last_name']
-      username = request.POST['username_name']
+      username = request.POST['username']
       email = request.POST['email']
       password = request.POST['password']
       password2 = request.POST['password2']

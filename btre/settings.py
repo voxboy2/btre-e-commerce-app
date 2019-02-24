@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'btredb',
         'USER': 'postgres',
-        'PASSWORD': 'wejumpnow',
+        'PASSWORD': 'weloveyou',
         'HOST': 'localhost'
     }
 }
@@ -144,6 +144,12 @@ MESSAGE_TAGS = {
 }
 
 # Email config
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ebieroma323@gmail.com'
+EMAIL_HOST_PASSWORD = 'weloveyou'
+EMAIL_PORT = 587
 
 try:
     from .local_settings import *

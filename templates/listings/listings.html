@@ -12,7 +12,7 @@
         <div class="row text-center">
             <div class="col-md-12">
                 <h1 class="display-4">Browse Our Properties</h1>
-                <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
+                <p class="lead">Search for properties all across Nigeria</p>
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@
                     <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="">
                     <div class="card-img-overlay">
                         <h2>
-                            <span class="badge badge-secondary text-white">${{ listing.price | intcomma }}</span>
+                            <span class="badge badge-secondary text-white">₦{{ listing.price | intcomma }}</span>
                         </h2>
                     </div>
                     <div class="card-body">

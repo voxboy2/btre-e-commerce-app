@@ -15,30 +15,25 @@ def contact(request):
         user_id = request.POST['user_id']
         realtor_email = request.POST['realtor_email']
 
-
         if request.user.is_authenticated:
             user_id = request.user.id
-            has_contacted = Contact.objects.all().filter(listing_id=listing_id, user_id=user_id)
+            has_contacted = Contact.objects.all().filter(
+                listing_id=listing_id, user_id=user_id)
             if has_contacted:
-                messages.error(request, 'you have already mad an inquiry for this listing')
+                messages.error(
+                    request, 'you have already mad an inquiry for this listing')
                 return redirect('/listing/'+listing_id)
-
-
-
-
-
 
         contact = Contact(listing=listing, listing_id=listing_id, name=name, email=email,
                           phone=phone, message=message, user_id=user_id)
 
         contact.save()
 
-
         send_mail(
             'property Listing Iquiry',
             'There has been an inquiry for ' + listing + '.sign into the admin panel for more info',
             'ebieroma323@gmail.com',
-            [realtor_email, 'ebieroma@gmail.com'],
+            [realtor_email, 'ebieroma323@gmail.com'],
             fail_silently=False
         )
 
